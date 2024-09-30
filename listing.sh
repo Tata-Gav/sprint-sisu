@@ -1,0 +1,1 @@
+ls -m -F --time=atime
