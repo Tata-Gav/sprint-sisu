@@ -1,9 +1,13 @@
 #!/bin/bash
-echo "find Everything that starts with an 'a': "
-find . -type f -name 'a*'
 
-echo "All the files ending with a 'z': "
-find . -type f -name '*z'
+# Ищем все файлы и директории, которые начинаются на 'a'
+echo "Ищем все файлы и директории, начинающиеся на 'a':"
+find . -type f -name 'a*'    # Исправлено: только для файлов
 
-echo "All files starting with 'z' and ending with 'a':"
-find . -type f -name 'z*a'
+# Ищем все файлы, которые оканчиваются на 'z'
+echo "Ищем все файлы, оканчивающиеся на 'z':"
+find . -type f -name '*z'     # Исправлено: добавлены пробелы и правильные опции
+
+# Ищем все файлы, которые начинаются на 'z' и оканчиваются на 'a'
+echo "Ищем все файлы, начинающиеся на 'z' и оканчивающиеся на 'a':"
+find . -type f -name 'z*a'     # Исправлено: добавлены пробелы и правильные опции
