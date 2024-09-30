@@ -1,1 +1,1 @@
-echo find . \(-name 'a*' -o -name '*z' -o -name 'z*a'\)
+find . \(-name 'a*' -o -name '*z' -o -name 'z*a'\)
