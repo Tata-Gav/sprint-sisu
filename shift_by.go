@@ -6,3 +6,4 @@ func ShiftBy(r rune, step int) rune {
 		return r
 	}
 	return 'a' + (r-'a'+rune(step)+26)%26
+}
