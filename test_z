@@ -2,12 +2,8 @@ package sprint
 
 func ShiftBy(r rune, step int) rune {
 
-	if r < 'a' || r > 'z' {
+	if r < 'a' || 'z' {
 		return r
 	}
-	offset := (r - 'a' + step) % 26
-	if offset < 0 {
-		offset += 26
-	}
-	return 'a' + offset
+	return 'a' + (r-'a'+rune(step)+26)%26
 }
