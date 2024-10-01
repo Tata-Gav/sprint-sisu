@@ -9,5 +9,5 @@ func ShiftBy(r rune, step int) rune {
 	if offset < 0 {
 		offset += 26
 	}
-	return 'a' +return(offset)
+	return 'a' + return(offset)
 }
