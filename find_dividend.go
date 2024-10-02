@@ -1,6 +1,9 @@
 package sprint
 
 func FindDividend(from, to, divisor int) int {
+	if divisor == 0 {
+		return -1
+	}
 	if from >= to {
 		return -1
 	}
