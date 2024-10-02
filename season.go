@@ -1,21 +1,17 @@
 package sprint
 
 func Season(month string) string {
-	switch month {
-		
+	switch month {	
 	case "jan", "feb", "dec":
 		return "winter"
-
 	case "mar", "apr", "may":
 		return "spring"
-		
 	case "jun", "jul", "aug":
 		return "summer"
-
-	case "sep", "oct", "now":
+	case "sep", "oct", "nov":
 		return "autumn"
 
 	default:
-		return "invalid input:" + month
+		return "invalid input:"
 	}
 }
