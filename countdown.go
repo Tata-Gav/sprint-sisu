@@ -13,7 +13,7 @@ func Countdown(n int) string {
 	if result[len(result)-1] != '0' { 
 		result += ", 0!"
 	} else {
-		result += "!" // Если последнее число 0, просто добавляем "!"
+		result += "!" 
 	}
 
 	return result
