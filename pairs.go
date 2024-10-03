@@ -2,23 +2,20 @@ package sprint
 
 import (
 	"fmt"
-	"strings"
 )
 
 func Pairs() string {
-	var result strings.Builder
+	var result string
 
 	for i := 0; i < 100; i++ {
-
 		for j := i + 1; j < 100; j++ {
-			
-			pair := fmt.Sprintf("%d %d", i, j)
+			combination := fmt.Sprintf("%02d %02d", i, j)
 
-			if result.Len() > 0 {
-				result.WriteString(", ")
+			if len(result) > 0 {
+				result += ", " 
 			}
-			result.WriteString(pair)
+			result += combination
 		}
 	}
-	return result.String()
+	return result
 }
