@@ -11,7 +11,8 @@ func Pairs() string {
 	for i := 0; i < 100; i++ {
 
 		for j := i + 1; j < 100; j++ {
-			pair := fmt.Sprintf("%02d %02d", i, j)
+			
+			pair := fmt.Sprintf("%d %d", i, j)
 
 			if result.Len() > 0 {
 				result.WriteString(", ")
