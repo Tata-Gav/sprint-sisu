@@ -7,11 +7,13 @@ func Countdown(n int) string {
 		if result != "" {
 			result += ", "
 		}
+
 		if i == 0 {
 			result += "0!"
 		} else {
-			result += string('0' + i)
+			result += fmt.Sprintf("%d", i)
 		}
 	}
+
 	return result
 }
