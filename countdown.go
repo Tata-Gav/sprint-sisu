@@ -7,14 +7,10 @@ func Countdown(n int) string {
 		if result != "" {
 			result += ", "
 		}
-
-		if i == 0 {
-			result += "0!" 
-		} else if i < 10 {
-			result += string('0' + i) 
-		} else {
-			result += string(i + '0') 
-		}
+		// Добавляем текущее число в строку
+		result += string('0' + i)
 	}
+
+	result += "!" // Добавляем "!" в конце после цикла
 	return result
 }
