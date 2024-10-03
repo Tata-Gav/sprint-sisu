@@ -10,7 +10,11 @@ func Countdown(n int) string {
 		result += string('0' + rune(i)) 
 	}
 
-	result += "!"
+	if result[len(result)-1] != '0' { 
+		result += ", 0!"
+	} else {
+		result += "!" // Если последнее число 0, просто добавляем "!"
+	}
 
 	return result
 }
