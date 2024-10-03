@@ -1,16 +1,17 @@
 package sprint
-import (
-	"fmt"
-)
+
 func Countdown(n int) string {
-	var result string
+	result := ""
 
 	for i :=n; i >= 0; i -= 2 {
 		if result != "" {
 			result += ", "
 		}
-		result += fmt.Sprintf("%d", i)
+		if i == 0 {
+			result += "0!"
+		} else {
+			result += string('0'+i)
+		}
 	}
-	result += "!"
 	return result
 }
