@@ -1,19 +1,15 @@
 package sprint
 
 func Countdown(n int) string {
-	result := ""
+	 var result string
 
-	for i := n; i >= 0; i -= 2 {
-		if result != "" {
-			result += ", "
-		}
-		result += string('0' + i)
-	}
+	for i := n; i >= 1; i -= 2 {
+		result += string('0' + rune(i))
 
-	if n > 0 { 
+
+	if i >= 1 { 
 		result += ", "
 	}
-	result += "0!"
-
-	return result
+	return result + "0!"
+	}
 }
