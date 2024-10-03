@@ -7,8 +7,14 @@ func Countdown(n int) string {
 		if result != "" {
 			result += ", "
 		}
-		result += string('0' + i)
-	} 
-	result += "!"
+
+		if i == 0 {
+			result += "0!" 
+		} else if i < 10 {
+			result += string('0' + i) 
+		} else {
+			result += string(i + '0') 
+		}
+	}
 	return result
 }
