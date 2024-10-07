@@ -1,5 +1,7 @@
 package sprint
 
+import "sort"
+
 func SortIntegerTable(table []int) []int {
     // Create a copy of the original table to avoid modifying it in place
     sortedTable := make([]int, len(table))
