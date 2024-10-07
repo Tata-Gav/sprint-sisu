@@ -6,28 +6,18 @@ import (
 
 func CombN(n int) []string {
 	var results []string
-	combination := make([]int, n)
+	var generate func(prefix string, start int)
 
-	var backtrack func(start int, depth int)
-	backtrack = func (start int, depth int)  {
-		if depth  == n {
-			str := ""
-			for _, num := range combination {
-				str += fmt.Sprint(num)
-			}
-			results = append(results, str)
+	generate = func(prefix string, start int) {
+		if len(prefix) == n {
+			result = append(result, prefix)
 			return
-			}
-
+		}
 		for i := start; i <= 9; i++ {
-			combination[depth] = i
-			backtrack(i+1, depth+1)
-			}
-		backtrack(0, 0)
-		return results
+			generate(prefix+fmt.Sprintf("%d", i), i+1)	
 		}
-		func main()  {
-			combination := CombN(3)
-			fmt.Println(combinations)	
-		}
+		
+		generate("", 0)
+		return result
 	}
+}
