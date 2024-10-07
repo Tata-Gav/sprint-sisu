@@ -3,7 +3,7 @@ package sprint
 func RemoveElementsInRange(arr []float64, from, to int) []float64 {
     length := len(arr)
 
-    // Обработка отрицательных индексов
+    // Обрабатываем отрицательные индексы
     if from < 0 {
         from += length
     }
@@ -11,7 +11,7 @@ func RemoveElementsInRange(arr []float64, from, to int) []float64 {
         to += length
     }
 
-    // Убедимся, что индексы не выходят за пределы массива
+    // Если индексы выходят за пределы массива, корректируем их
     if from < 0 {
         from = 0
     }
@@ -25,12 +25,12 @@ func RemoveElementsInRange(arr []float64, from, to int) []float64 {
         to = length - 1
     }
 
-    // Если индексы в неправильном порядке, поменяем их
+    // Если индексы в неправильном порядке, меняем их местами
     if from > to {
         from, to = to, from
     }
 
-    // Удаляем элементы от from до to-1 включительно
+    // Удаляем элементы от from до to-1 включительно, оставляем to
     result := append(arr[:from], arr[to:]...)
 
     return result
