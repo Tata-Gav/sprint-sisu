@@ -1,12 +1,14 @@
 package sprint
  
 func SortIntegerTable(table []int) []int {
-    // Create a copy of the original table to avoid modifying it in place
-    sortedTable := make([]int, len(table))
-    copy(sortedTable, table)
-
-    // Sort the copied table using the built-in sort function
-    sort.Ints(sortedTable)
-
-    return sortedTable
+    
+	for i := 0; i < len(table)-1; i++ {
+		for j := + 1; j < len(table); j++ {
+			if table[i] >= table[j] {
+				
+				table[i], table[j] = table[j], table[i]
+			}
+		}
+	}
+    return table
 }
