@@ -1,37 +1,28 @@
 package sprint
 
 func RemoveElementsInRange(arr []float64, from, to int) []float64 {
-    length := len(arr)
-
-    // Обрабатываем отрицательные индексы
-    if from < 0 {
-        from += length
-    }
-    if to < 0 {
-        to += length
-    }
-
-    // Если индексы выходят за пределы массива, корректируем их
+    // Handle negative indices
     if from < 0 {
         from = 0
-    }
-    if from >= length {
-        from = length - 1
     }
     if to < 0 {
         to = 0
     }
-    if to >= length {
-        to = length - 1
-    }
 
-    // Если индексы в неправильном порядке, меняем их местами
+    // Ensure from <= to
     if from > to {
         from, to = to, from
     }
 
-    // Удаляем элементы от from до to-1 включительно, оставляем to
-    result := append(arr[:from], arr[to:]...)
+    // Handle indices larger than array length
+    if from >= len(arr) {
+        return arr
+    }
+    if to > len(arr) {
+        to = len(arr)
+    }
 
+    // Remove elements within the specified range
+    result := append(arr[:from], arr[to:]...)
     return result
 }
