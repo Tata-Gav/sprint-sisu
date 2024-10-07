@@ -5,7 +5,7 @@ import (
 )
 
 func CombN(n int) []string {
-	var results []string
+	var result []string
 	var generate func(prefix string, start int)
 
 	generate = func(prefix string, start int) {
@@ -16,8 +16,8 @@ func CombN(n int) []string {
 		for i := start; i <= 9; i++ {
 			generate(prefix+fmt.Sprintf("%d", i), i+1)	
 		}
-		
+	}
+
 		generate("", 0)
 		return result
-	}
 }
