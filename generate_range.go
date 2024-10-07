@@ -1,3 +1,5 @@
+package sprint
+
 func GenerateRange(min, max int) []int {
     // Проверяем условие: если min >= max, возвращаем nil
     if min >= max {
