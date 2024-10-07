@@ -25,8 +25,7 @@ func CombN(n int) []string {
 			backtrack(0, 0)
 			return results
 		}
-		func main()  {
-			combination := CombN(3)
-			fmt.Println(combinations)	
+		//func main()  {
+			//combination := CombN(3)
+			//fmt.Println(combinations)	
 		}
-}
