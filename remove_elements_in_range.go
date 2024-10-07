@@ -26,8 +26,3 @@ func RemoveElementsInRange(arr []float64, from, to int) []float64 {
     result := append(arr[:from], arr[to:]...)
     return result
 }
-func main() {
-    arr := []float64{10.0, 0.8, -0.4, 20.0, 7.7, 3.0}
-    result := RemoveElementsInRange(arr, 4, 1)
-    fmt.Println(result) // Output: [10 7.7 3]
-}
