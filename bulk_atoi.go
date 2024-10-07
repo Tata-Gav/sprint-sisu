@@ -1,38 +1,33 @@
 package sprint
 
-func BulkAtoi(arr []string) []int {
+func SimpleStrToInt(arr []string) []int {
 	
 	result := 0
-    sign := 1
     i := 0
-
-    // Handle leading whitespace
-    for i < len(s) && s[i] == ' ' {
-        i++
+    for {
+        if i >= len(s) {
+       break
     }
-
-    // Handle sign
-    if i < len(s) && (s[i] == '+' || s[i] == '-') {
-        if s[i] == '-' {
-            sign = -1
+    
+    char := s[i]
+    if char >=  '0' && char <= '9' {
+        digit := int (char - '0')
+        result = result*10 + digit
         }
         i++
     }
-
-    // Parse digits
-    for i < len(s) && s[i] >= '0' && s[i] <= '9' {
-        digit := int(s[i] - '0')
-        result = result*10 + digit
-        i++
-    }
-
-    return result * sign
-}
-
-func BulkAtoi(arr []string) []int {
-    result := make([]int, len(arr))
-    for i, s := range arr {
-        result[i] = StrToInt(s)
+    
+    if len(s) > 0 && s[0] = '-' {
+        return -result
     }
     return result
+
+}
+func BulkAtoi(arr []string) []int {
+    result := []int{}
+    for i := 0, i < len(arr); i++ {
+    value := SimpleStrToInt(arr[i])
+    result = append(result)
+    }
+    return result 
 }
