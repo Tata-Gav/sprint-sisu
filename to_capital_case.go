@@ -2,34 +2,34 @@ package Sprint
 
 func ToCapitalCase(s string) string {
     var result []rune
+    capitalizeNext := true // Flag to determine if the next character should be capitalized
+
     for i, r := range s {
-        // Если это первый символ или предыдущий символ - разделитель
-        if i == 0  isWordBoundary(s[i-1]) {
-            // Преобразуем первую букву в заглавную
-            if 'a' <= r && r <= 'z' {
-                r = r - ('a' - 'A')
-            }
+        if isWordBoundary(byte(r)) {
+            result = append(result, r) // Append the word boundary character
+            capitalizeNext = true      // Next alphanumeric character should be capitalized
         } else {
-            // Преобразуем заглавные буквы в строчные
-            if 'A' <= r && r <= 'Z' {
-                r = r + ('a' - 'A')
+            if capitalizeNext {
+                // Capitalize the first letter of the word
+                if 'a' <= r && r <= 'z' {
+                    r = r - ('a' - 'A')
+                }
+                capitalizeNext = false // Reset flag after capitalizing
+            } else {
+                // Convert uppercase letters to lowercase for subsequent characters
+                if 'A' <= r && r <= 'Z' {
+                    r = r + ('a' - 'A')
+                }
             }
+            result = append(result, r) // Append the modified character
         }
-
-        // Обрабатываем все буквы, кроме первой
-        if i > 0 && !isWordBoundary(s[i-1]) {
-            if 'A' <= r && r <= 'Z' {
-                r = r + ('a' - 'A')
-            }
-        }
-
-        result = append(result, r)
     }
     return string(result)
 }
 
-// Функция для проверки границ слова
+// Function to check for word boundaries
 func isWordBoundary(c byte) bool {
-    return c == ' '  c == '!'  c == '?'  c == '['  c == '{'  c == '(' 
-        c == ':'  c == '}'  c == '-'  c == '/'  c == '+'  c == '%'
+    return c == ' ' || c == '!' || c == '?' || c == '[' || c == '{' || 
+           c == '(' || c == ':' || c == '}' || c == '-' || c == '/' || 
+           c == '+' || c == '%'
 }
