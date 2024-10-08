@@ -1,25 +1,36 @@
-package sprint
-
+package sprint_test
 func ToCapitalCase(s string) string {
-    var results strings.Builder
-    capitalizeNext := true
+	var result []byte
+	var capitalizeNext bool
 
-    for _, r := range s {
-        if (r >= 'A' && r <= 'Z') || (r >= 'a' && r <= 'z') {
-            if capitalizeNext {
-                r = r - 32
-            } else {
-                r = r + 32
-            }
-            result.WriteRune(r)
-            capitalizeNext = false
-        } else if r == ' ' || r == '-' || r == '_' {
-            result.WriteRune(r)
-            capitalizeNext = true
-        } else {
-            result.WriteRune(r)
-        }
-    }
+	for i := 0; i < len(s); i++ {
+		// Check if the character is alphanumeric
+		if (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= '0' && s[i] <= '9') {
+			if capitalizeNext {
+				// Capitalize the current character
+				if s[i] >= 'a' && s[i] <= 'z' {
+					result = append(result, s[i]-32) // Convert lowercase to uppercase
+				} else {
+					result = append(result, s[i]) // Already uppercase
+				}
+				capitalizeNext = false
+			} else {
+				// Lowercase the current character
+				if s[i] >= 'A' && s[i] <= 'Z' {
+					result = append(result, s[i]+32) // Convert uppercase to lowercase
+				} else {
+					result = append(result, s[i]) // Already lowercase
+				}
+			}
+		} else {
+			// Non-alphanumeric character, just append it
+			result = append(result, s[i])
+			// Next character should be capitalized if it is alphanumeric
+			if s[i] == ' ' || s[i] == '!' || s[i] == '-' || s[i] == '?' {
+				capitalizeNext = true
+			}
+		}
+	}
 
-    return result.String()
+	return string(result)
 }
