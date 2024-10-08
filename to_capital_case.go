@@ -4,7 +4,7 @@ func ToCapitalCase(s string) string {
     var result []rune
     capitalizeNext := true
 
-    for i, r := range s {
+    for _, r := range s { // Use underscore to ignore the index variable
         if isWordBoundary(byte(r)) {
             result = append(result, r)
             capitalizeNext = true
