@@ -1,14 +1,12 @@
 package sprint
 
-import "strings"
-
 func StrSplitBy(s, sep string) []string {
-
     result := []string{}
     startIndex := 0
 
     for {
-        endIndex := strings.IndexByte(s[startIndex:], sep[0])
+        endIndex := indexByte(s[startIndex:], sep[0])
+        
         if endIndex == -1 {
             break
         }
@@ -26,4 +24,13 @@ func StrSplitBy(s, sep string) []string {
     }
 
     return result
+}
+
+func indexByte(s string, c byte) int {
+    for i := 0; i < len(s); i++ {
+        if s[i] == c {
+            return i
+        }
+    }
+    return -1
 }
