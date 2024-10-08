@@ -1,7 +1,6 @@
 package sprint
 
-import 
-("string")
+import "strings"
 
 func StrSplitBy(s, sep string) []string {
 
