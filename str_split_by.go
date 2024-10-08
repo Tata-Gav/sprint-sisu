@@ -3,20 +3,17 @@ package sprint
 func StrSplitBy(s, sep string) []string {
     result := []string{}
     startIndex := 0
+    sepLen := len(sep)
 
     for {
-        endIndex := indexByte(s[startIndex:], sep[0])
-        
+        endIndex := indexSubString(s[startIndex:], sep)
+
         if endIndex == -1 {
             break
         }
 
-        if match := s[startIndex : startIndex+endIndex+1]; match == sep {
-            result = append(result, s[startIndex:startIndex+endIndex])
-            startIndex += endIndex + len(sep)
-        } else {
-            startIndex += endIndex + 1
-        }
+        result = append(result, s[startIndex:startIndex+endIndex])
+        startIndex += endIndex + sepLen
     }
 
     if startIndex < len(s) {
@@ -26,9 +23,9 @@ func StrSplitBy(s, sep string) []string {
     return result
 }
 
-func indexByte(s string, c byte) int {
-    for i := 0; i < len(s); i++ {
-        if s[i] == c {
+func indexSubString(s, sub string) int {
+    for i := 0; i <= len(s)-len(sub); i++ {
+        if s[i:i+len(sub)] == sub {
             return i
         }
     }
