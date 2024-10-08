@@ -27,5 +27,6 @@ func ToCapitalCase(s string) string {
 
 func isWordBoundary(c byte) bool {
     return c == ' ' || c == '!' || c == '?' || c == '[' || c == '{' || 
-           c == '(' || c == ':' || c == '}' ||
+           c == '(' || c == ':' || c == '}' || c == '-' || c == '/' || 
+           c == '+' || c == '%'
 }
