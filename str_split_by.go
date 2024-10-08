@@ -1,5 +1,8 @@
 package sprint
 
+import 
+("string")
+
 func StrSplitBy(s, sep string) []string {
 
     result := []string{}
