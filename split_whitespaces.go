@@ -5,7 +5,7 @@ func SplitWhitespaces(s string) []string {
     word := ""
 
     for _, char := range s {
-        if unicode.IsSpace(char) || char == '\t' || char == '\n' {
+        if char == ' ' || char == '\t' || char == '\n' {
             if word != "" {
                 words = append(words, word)
                 word = ""
