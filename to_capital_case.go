@@ -1,4 +1,5 @@
-package sprint_test
+package sprint
+
 func ToCapitalCase(s string) string {
 	var result []byte
 	var capitalizeNext bool
