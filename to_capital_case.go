@@ -1,3 +1,5 @@
+package sprint
+
 func ToCapitalCase(s string) string {
     var result strings.Builder
     capitalizeNext := true
