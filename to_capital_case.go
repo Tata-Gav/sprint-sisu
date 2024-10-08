@@ -1,37 +1,35 @@
-package sprint
+package Sprint
 
 func ToCapitalCase(s string) string {
-	var result []byte
-	var capitalizeNext bool
+    var result []rune
+    for i, r := range s {
+        // Если это первый символ или предыдущий символ - разделитель
+        if i == 0  isWordBoundary(s[i-1]) {
+            // Преобразуем первую букву в заглавную
+            if 'a' <= r && r <= 'z' {
+                r = r - ('a' - 'A')
+            }
+        } else {
+            // Преобразуем заглавные буквы в строчные
+            if 'A' <= r && r <= 'Z' {
+                r = r + ('a' - 'A')
+            }
+        }
 
-	for i := 0; i < len(s); i++ {
-		// Check if the character is alphanumeric
-		if (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= '0' && s[i] <= '9') {
-			if capitalizeNext {
-				// Capitalize the current character
-				if s[i] >= 'a' && s[i] <= 'z' {
-					result = append(result, s[i]-32) // Convert lowercase to uppercase
-				} else {
-					result = append(result, s[i]) // Already uppercase
-				}
-				capitalizeNext = false
-			} else {
-				// Lowercase the current character
-				if s[i] >= 'A' && s[i] <= 'Z' {
-					result = append(result, s[i]+32) // Convert uppercase to lowercase
-				} else {
-					result = append(result, s[i]) // Already lowercase
-				}
-			}
-		} else {
-			// Non-alphanumeric character, just append it
-			result = append(result, s[i])
-			// Next character should be capitalized if it is alphanumeric
-			if s[i] == ' ' || s[i] == '!' || s[i] == '-' || s[i] == '?' {
-				capitalizeNext = true
-			}
-		}
-	}
+        // Обрабатываем все буквы, кроме первой
+        if i > 0 && !isWordBoundary(s[i-1]) {
+            if 'A' <= r && r <= 'Z' {
+                r = r + ('a' - 'A')
+            }
+        }
 
-	return string(result)
+        result = append(result, r)
+    }
+    return string(result)
+}
+
+// Функция для проверки границ слова
+func isWordBoundary(c byte) bool {
+    return c == ' '  c == '!'  c == '?'  c == '['  c == '{'  c == '(' 
+        c == ':'  c == '}'  c == '-'  c == '/'  c == '+'  c == '%'
 }
