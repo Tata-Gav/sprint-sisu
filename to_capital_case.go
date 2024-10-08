@@ -1,7 +1,7 @@
 package sprint
 
 func ToCapitalCase(s string) string {
-    var result strings.Builder
+    var results strings.Builder
     capitalizeNext := true
 
     for _, r := range s {
