@@ -11,9 +11,14 @@ func NbrBase(n int, base string) string {
     }
 
     result := ""
+    baseMap := make(map[rune]int)
+    for i, char := range base {
+        baseMap[char] = i
+    }
+
     for n > 0 {
         remainder := n % len(base)
-        result = string(base[remainder]) + result
+        result = string(base[baseMap[rune(base[remainder])]]) + result
         n /= len(base)
     }
 
