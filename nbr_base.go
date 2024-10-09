@@ -1,25 +1,25 @@
 package sprint
 
 func NbrBase(n int, base string) string {
-    if base == "" || len(base) < 2 {
-        panic("Invalid base")
+    
+    if len(base) < 2  containsInvalidChars(base) {
+        return "NV" 
     }
-
+    
     isNegative := n < 0
     if isNegative {
-        n = -n
+        n = -n 
+    }
+
+    if n == 0 {
+        return string(base[0])
     }
 
     result := ""
-    baseMap := make(map[rune]int)
-    for i, char := range base {
-        baseMap[char] = i
-    }
-
     for n > 0 {
-        remainder := n % len(base)
-        result = string(base[baseMap[rune(base[remainder])]]) + result
-        n /= len(base)
+        digit := n % len(base) 
+        result = string(base[digit]) + result 
+        n = n / len(base) 
     }
 
     if isNegative {
@@ -27,4 +27,16 @@ func NbrBase(n int, base string) string {
     }
 
     return result
+}
+
+func containsInvalidChars(base string) bool {
+    seen := make(map[rune]bool)
+    for _, char := range base {
+        
+        if char == '+'  char == '-' || seen[char] {
+            return true
+        }
+        seen[char] = true
+    }
+    return false
 }
