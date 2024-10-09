@@ -1,7 +1,8 @@
 package sprint
 
-import "strings"
-import "math"
+import ( 
+"strings"
+"math" )
 
 func NbrBase(n int, base string) string {
 	if len(base) < 2 || strings.ContainsAny(base, "+-") {
