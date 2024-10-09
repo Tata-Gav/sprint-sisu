@@ -2,7 +2,7 @@ package sprint
 
 func NbrBase(n int, base string) string {
     
-    if len(base) < 2  containsInvalidChars(base) {
+    if len(base) < 2  || containsInvalidChars(base) {
         return "NV" 
     }
     
@@ -33,7 +33,7 @@ func containsInvalidChars(base string) bool {
     seen := make(map[rune]bool)
     for _, char := range base {
         
-        if char == '+'  char == '-' || seen[char] {
+        if char == '+' || char == '-' || seen[char] {
             return true
         }
         seen[char] = true
