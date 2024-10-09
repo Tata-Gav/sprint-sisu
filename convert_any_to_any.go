@@ -1,3 +1,5 @@
+package sprint
+
 import (
 	"math"
 	"strings"
