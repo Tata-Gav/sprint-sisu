@@ -1,5 +1,3 @@
-package sprint
-
 import (
 	"math"
 	"strings"
@@ -26,7 +24,7 @@ func ConvertAnyToAny(nbr, baseFrom, baseTo string) string {
 			if _, ok := fromBaseMap[char]; !ok {
 					return ""
 			}
-			decimalValue += fromBaseMap[char] * math.Pow(float64(baseFromLen), float64(len(nbr)-i-1))
+			decimalValue += fromBaseMap[char] * int(math.Pow(float64(baseFromLen), float64(len(nbr)-i-1)))
 	}
 
 	result := ""
