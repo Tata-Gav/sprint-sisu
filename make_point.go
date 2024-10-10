@@ -6,7 +6,7 @@ type Point struct {
 	Text string
 }
 
-func MokePoint(x, y float32, text string) Point {
+func MakePoint(x, y float32, text string) Point {
 	return Point{
 		X: x,
 		Y: y,
