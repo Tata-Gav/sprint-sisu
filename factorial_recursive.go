@@ -11,7 +11,7 @@ func FactorialRecursive(n int) int {
 
     // Check for overflow before multiplying
     result := FactorialRecursive(n-1)
-    if n * result < 0 {
+    if n*result < 0 {
         return 0 // Return 0 for overflow
     }
 
