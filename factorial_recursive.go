@@ -14,6 +14,5 @@ func FactorialRecursive(n int) int {
     if n*result < 0 {
         return 0 // Return 0 for overflow
     }
-
     return n * result
 }
