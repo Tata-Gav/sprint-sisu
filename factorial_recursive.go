@@ -13,6 +13,5 @@ func FactorialRecursive(n int) int {
     if n*result < 0 {
         return 0
     }
-
     return n * result
 }
