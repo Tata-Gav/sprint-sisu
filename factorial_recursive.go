@@ -1,18 +1,19 @@
 package sprint
 
-import (
-    "math"
-)
 func FactorialRecursive(n int) int {
     if n < 0 {
-        return 0 // non-possible value
+        return 0 // Handle negative numbers
     }
+
     if n == 0 || n == 1 {
         return 1
     }
-    result := n * FactorialRecursive(n-1)
-    if result < 0 || result > math.MaxInt { // Check for overflow
-        return 0
+
+    // Check for overflow before multiplying
+    result := FactorialRecursive(n-1)
+    if n*result < 0 {
+        return 0 // Return 0 for overflow
     }
-    return result
+
+    return n * result
 }
