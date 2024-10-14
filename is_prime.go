@@ -1,5 +1,7 @@
 package sprint
 
+import "math"
+
 func IsPrime(n int) bool {
     if n <= 1 {
         return false // Handle numbers less than or equal to 1
