@@ -1,7 +1,5 @@
 package sprint
 
-package main
-
 func FactorialRecursive(n int) int {
     if n < 0 {
         return 0 // Handle negative numbers
