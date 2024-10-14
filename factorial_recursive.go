@@ -9,10 +9,11 @@ func FactorialRecursive(n int) int {
         return 1
     }
 
-    // Check for overflow before multiplyin
+    // Check for overflow before multiplying
     result := FactorialRecursive(n-1)
-    if n*result < 0 {
+    if n * result < 0 {
         return 0 // Return 0 for overflow
     }
+
     return n * result
 }
