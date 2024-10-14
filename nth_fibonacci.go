@@ -1,6 +1,6 @@
 package sprint
 
-unc NthFibonacci(index int) int {
+func NthFibonacci(index int) int {
     if index < 0 {
         return -1 // Handle negative indices
     }
