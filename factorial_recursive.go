@@ -5,7 +5,6 @@ import (
 	"fmt"
 )
 
-
 func FactorialRecursive(n int) int {
     if n < 0 {
         return 0 // Handle negative numbers
@@ -16,14 +15,9 @@ func FactorialRecursive(n int) int {
     }
 
     // Check for overflow before multiplying
-    if math.MaxInt64/n < FactorialRecursive(n-1) {
+    if result*i < 0 {
         return 0 // Return 0 for overflow
     }
 
     return n * FactorialRecursive(n-1)
-}
-
-func main() {
-    result := FactorialRecursive(5)
-    fmt.Println(result) // Output: 120
 }
