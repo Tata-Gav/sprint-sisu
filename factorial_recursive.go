@@ -1,9 +1,6 @@
 package sprint
 
-import (
-	"math"
-	"fmt"
-)
+package main
 
 func FactorialRecursive(n int) int {
     if n < 0 {
@@ -15,9 +12,10 @@ func FactorialRecursive(n int) int {
     }
 
     // Check for overflow before multiplying
-    if result*i < 0 {
+    result := FactorialRecursive(n-1)
+    if n*result < 0 {
         return 0 // Return 0 for overflow
     }
 
-    return n * FactorialRecursive(n-1)
+    return n * result
 }
