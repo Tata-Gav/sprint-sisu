@@ -11,8 +11,3 @@ func ToThePowerRecursive(n int, power int) int {
 
     return n * ToThePowerRecursive(n, power-1)
 }
-
-func main() {
-    result := ToThePowerRecursive(2, 10)
-    fmt.Println(result) // Output: 1024
-}
