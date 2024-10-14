@@ -18,5 +18,5 @@ func PointDiff(p1, p2 Point) Point {
 	} else if p2.Y > p1.Y {
 		return p2
 	}
-	return p1
+	return p1 
 }
