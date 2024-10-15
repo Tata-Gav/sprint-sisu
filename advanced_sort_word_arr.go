@@ -1,6 +1,5 @@
 package sprint
 import (
-    "fmt"
     "sort"
 )
 
