@@ -12,12 +12,15 @@ func IsLower(s string) bool {
 
 // IsUpper проверяет, содержит ли строка только заглавные буквы
 func IsUpper(s string) bool {
+    hasLetter := false
     for _, c := range s {
-        if c >= 'a' && c <= 'z' { // Если находим строчный символ, возвращаем false
+        if c >= 'A' && c <= 'Z' { // Если символ - заглавная буква
+            hasLetter = true
+        } else if c >= 'a' && c <= 'z' || c >= '0' && c <= '9' { // Если символ - строчная буква или цифра
             return false
         }
     }
-    return len(s) > 0 // Возвращаем true, если строка не пустая и все символы заглавные
+    return hasLetter // Возвращаем true, если в строке есть заглавные буквы
 }
 
 // IsAlphanumeric проверяет, содержит ли строка только алфавитные и числовые символы
