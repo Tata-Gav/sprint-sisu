@@ -1,11 +1,6 @@
 package sprint
 
 func StrCompare(a, b string) int {
-    // Handle leading zeros
-    a = strings.TrimLeft(a, "0")
-    b = strings.TrimLeft(b, "0")
-
-    // Compare strings character by character
     for i := 0; i < len(a) && i < len(b); i++ {
         if a[i] < b[i] {
             return -1
@@ -14,7 +9,6 @@ func StrCompare(a, b string) int {
         }
     }
 
-    // Compare lengths if strings are equal up to this point
     if len(a) < len(b) {
         return -1
     } else if len(a) > len(b) {
@@ -22,4 +16,13 @@ func StrCompare(a, b string) int {
     }
 
     return 0
+}
+
+func IsSorted(f func(a, b string) int, arr []string) bool {
+    for i := 0; i < len(arr)-1; i++ {
+        if f(arr[i], arr[i+1]) > 0 {
+            return false // Not sorted in ascending order
+        }
+    }
+    return true
 }
