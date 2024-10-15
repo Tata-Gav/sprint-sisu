@@ -18,9 +18,9 @@ func IsAlphanumeric(s string) bool {
     return true
 }
 
-func IsLower(s string) bool {
+func IsNumeric(s string) bool {
     for _, c := range s {
-        if c >= 'A' && c <= 'Z' {
+        if !('0' <= c && c <= '9') {
             return false
         }
     }
