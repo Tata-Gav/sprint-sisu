@@ -1,28 +1,30 @@
 package sprint
 
 func StrCompare(a, b string) int {
-    for i := 0; i < len(a) && i < len(b); i++ {
-        if a[i] < b[i] {
-            return -1
-        } else if a[i] > b[i] {
-            return 1
-        }
-    }
-
-    if len(a) < len(b) {
+    if a < b {
         return -1
-    } else if len(a) > len(b) {
+    } else if a > b {
         return 1
     }
-
     return 0
 }
 
 func IsSorted(f func(a, b string) int, arr []string) bool {
-    for i := 0; i < len(arr)-1; i++ {
-        if f(arr[i], arr[i+1]) > 0 {
-            return false // Not sorted in ascending order
+    if len(arr) < 2 {
+        return true
+    }
+
+    ascending := true
+    descending := true
+
+    for i := 1; i < len(arr); i++ {
+        if f(arr[i-1], arr[i]) > 0 {
+            ascending = false
+        }
+        if f(arr[i-1], arr[i]) < 0 {
+            descending = false
         }
     }
-    return true
+
+    return ascending || descending
 }
