@@ -1,7 +1,4 @@
 package sprint
-import (
-    "sort"
-)
 
 // StrCompare function should be defined beforehand
 func StrCompare(a, b string) int {
