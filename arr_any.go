@@ -18,6 +18,15 @@ func IsAlphanumeric(s string) bool {
     return true
 }
 
+func IsLower(s string) bool {
+    for _, c := range s {
+        if c >= 'A' && c <= 'Z' {
+            return false
+        }
+    }
+    return true
+}
+
 func ArrAny(f func(string) bool, a []string) bool {
     for _, s := range a {
         if f(s) {
