@@ -1,9 +1,16 @@
 package sprint
 
-import "fmt"
+import (
+    "fmt"
+    "strconv"
+)
 
 func StrCompress(input string) string {
-    var compressed string
+    if len(input) == 0 {
+        return ""
+    }
+
+    var result string
     count := 1
 
     for i := 1; i < len(input); i++ {
@@ -11,19 +18,16 @@ func StrCompress(input string) string {
             count++
         } else {
             if count > 1 {
-                compressed += string(count) + string(input[i-1])
-            } else {
-                compressed += string(input[i-1])
+                result += strconv.Itoa(count)
             }
+            result += string(input[i-1])
             count = 1
         }
     }
 
     if count > 1 {
-        compressed += string(count) + string(input[len(input)-1])
-    } else {
-        compressed += string(input[len(input)-1])
+        result += strconv.Itoa(count)
     }
-
-    return compressed
+    result += string(input[len(input)-1])
+	return result
 }
