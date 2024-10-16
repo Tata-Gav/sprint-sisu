@@ -11,7 +11,7 @@ func LCM(a, b int) int {
 	return abs(a * b) / GCD(a, b)
 
 }
- funk abc(x int) int {
+ func abc(x int) int {
 	if x < 0 {
 		return -x
 	}
