@@ -1,7 +1,5 @@
 package sprint
 
-import "fmt"
-
 func StrCompress(input string) string {
     var compressed string
     count := 1
