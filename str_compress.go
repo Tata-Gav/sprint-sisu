@@ -2,9 +2,7 @@ package sprint
 
 import (
     "fmt"
-    "strconv"
 )
-
 func StrCompress(input string) string {
     if len(input) == 0 {
         return ""
@@ -18,7 +16,7 @@ func StrCompress(input string) string {
             count++
         } else {
             if count > 1 {
-                result += strconv.Itoa(count)
+                result += fmt.Sprintf("%d", count)
             }
             result += string(input[i-1])
             count = 1
@@ -26,8 +24,9 @@ func StrCompress(input string) string {
     }
 
     if count > 1 {
-        result += strconv.Itoa(count)
+        result += fmt.Sprintf("%d", count)
     }
     result += string(input[len(input)-1])
-	return result
+
+    return result
 }
