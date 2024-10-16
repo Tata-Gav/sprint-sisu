@@ -1,6 +1,6 @@
 package sprint
 
-func GSD(a, b int) int {
+func GCD(a, b int) int {
 	for b != 0 {
 		a, b = b, a%b
 	}
@@ -8,7 +8,7 @@ func GSD(a, b int) int {
 
 }
 func LCM(a, b int) int {
-	return abs(a * b) / GCD(a, b)
+	return abc(a * b) / GCD(a, b)
 
 }
  func abc(x int) int {
