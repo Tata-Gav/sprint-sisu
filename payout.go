@@ -21,4 +21,5 @@ func Payout(amount int, denominations []int) (payout []int) {
     if amount != 0 {
         return []int{}
     }
+	return payout
 }
