@@ -1,9 +1,10 @@
 package sprint
 
 import (
-    "sort" // Make sure to import the sort package
+"sort"
 )
+
 func SortWordArr(a []string) []string {
-	sort.Strings(a)
-	return a
+    sort.Strings(a)
+    return a
 }
