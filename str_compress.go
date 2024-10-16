@@ -9,7 +9,7 @@ func StrCompress(input string) string {
             count++
         } else {
             if count > 1 {
-                compressed += string(count) + string(input[i-1])
+                compressed += strconv.Itoa(count) + string(input[i-1])
             } else {
                 compressed += string(input[i-1])
             }
@@ -18,7 +18,7 @@ func StrCompress(input string) string {
     }
 
     if count > 1 {
-        compressed += string(count) + string(input[len(input)-1])
+        compressed += strconv.Itoa(count) + string(input[len(input)-1])
     } else {
         compressed += string(input[len(input)-1])
     }
