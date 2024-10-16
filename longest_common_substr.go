@@ -28,3 +28,4 @@ func LongestCommonSubstr(str1, str2 string) string {
     }
 
     return str1[endingIndex-maxLength : endingIndex]
+}
